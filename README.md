@@ -1,4 +1,4 @@
-<p align="center"><img src="{{asset('/images/logo-3.png')}}" width="400"></a></p>
+<p align="center"><img src="public/images/logo-3.png" width="200"></a></p>
 
 ## Apa itu Q-Lite?
 
@@ -6,7 +6,7 @@ Q-Lite adalah sebuah forum tanya jawab dimana pengguna dapat mengajukan pertanya
 
 ## ERD
 
-<p align="center"><img src="{{asset('/images/erd_finalproject.png')}}" width="400"></a></p>
+<p align="center"><img src="public/images/erd_finalproject.png"></a></p>
 
 ## Kelompok 2
 
