@@ -2,10 +2,10 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+        <div class="sidebar-brand-icon">
+          <img src="{{ asset('images/logo-2.png')}}" alt="" height="70px">
         </div>
-        <div class="sidebar-brand-text mx-3">Dashboard <sup>Q-Lite</sup></div>
+        <div class="sidebar-brand-text mr-3">Dashboard <sup>Q-Lite</sup></div>
       </a>
 
       <!-- Divider -->
@@ -21,7 +21,7 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
       <li class="nav-item">
-        <a class="nav-link" href="/buku">
+        <a class="nav-link" href="/kategori">
           <i class="fas fa-fw fa-book"></i>
           <span>Kategori</span></a>
       </li>

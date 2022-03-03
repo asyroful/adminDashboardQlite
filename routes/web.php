@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('/master', function () {
     return view('halaman.master');
 });
+
+Route::get('/kategori/create', 'KategoriController@create');
+Route::post('/kategori', 'KategoriController@store');
+Route::get('/kategori', 'KategoriController@index');
+
