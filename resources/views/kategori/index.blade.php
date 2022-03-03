@@ -12,7 +12,7 @@
             </div>
             
             <div class="card-body">
-                <a class="btn btn-primary mb-2" href="/kategori/create">Create New Genre</a>
+                <a class="btn btn-primary mb-2" href="/kategori/create">Create New Category</a>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
