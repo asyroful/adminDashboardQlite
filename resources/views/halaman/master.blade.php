@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>Timeline Publik | Q-Lite</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{ asset('/sbadmin2/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -30,12 +30,31 @@
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+      <!-- Topbar -->
+      @include('halaman.partials.nav')
+      <!-- End of Topbar -->
+      
+      <!-- Begin Page Content -->
+      <div class="container-fluid mb-3">
+      <!-- Page Heading -->
+      <h1 class="h3 mb-4 text-gray-800">@yield('judul')</h1>
       @yield('content')
+                
+      </div>
+      <!-- /.container-fluid -->
+      
+      </div>
+      <!-- End of Main Content -->
+    
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Q-Lite &copy; 2022</span>
           </div>
         </div>
       </footer>
