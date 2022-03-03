@@ -1,7 +1,7 @@
 @extends('halaman.master')
 @section('content')
 <div class="m-3">
-  <h2>Tambah Cast</h2>
+  <h2>Tambah Kategori</h2>
   <form action="/kategori" method="POST">
       @csrf
       <div class="form-group">

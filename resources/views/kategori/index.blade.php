@@ -8,7 +8,7 @@
                 </div>
             @endif
             <div class="card-header">
-                <h3 class="card-title">Genre Table</h3>
+                <h3 class="card-title">Category Table</h3>
             </div>
             
             <div class="card-body">
@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                             <th style="width: 10px">No</th>
-                            <th>Nama Genre</th>
+                            <th>Nama Kategori</th>
                             <th style="width: 40px">Aksi</th>
                         </tr>
                     </thead>
@@ -27,7 +27,7 @@
                         <td>{{ $key + 1}}</td>
                         <td>{{ $post->nama }}</td>
                         <td style="display: flex;" class="mx-2">
-                            <a href="/kategori/{{$post->id}}" class="btn btn-info btn-sm mx-1">Show</a>
+                            <!-- <a href="/kategori/{{$post->id}}" class="btn btn-info btn-sm mx-1">Show</a> -->
                             <a href="/kategori/{{$post->id}}/edit" class="btn btn-default btn-sm mx-1">Edit</a>
                             <form action="/kategori/{{$post->id}}" method="post">
                                 @csrf
