@@ -22,4 +22,3 @@ Route::get('/master', function () {
 Route::get('/kategori/create', 'KategoriController@create');
 Route::post('/kategori', 'KategoriController@store');
 Route::get('/kategori', 'KategoriController@index');
-
