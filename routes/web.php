@@ -19,6 +19,11 @@ Route::get('/master', function () {
     return view('halaman.master');
 });
 
+Route::get('/profil', function(){
+    return view('halaman.profil');
+});
+
+
 Route::get('/kategori/create', 'KategoriController@create');
 Route::post('/kategori', 'KategoriController@store');
 Route::get('/kategori', 'KategoriController@index');
