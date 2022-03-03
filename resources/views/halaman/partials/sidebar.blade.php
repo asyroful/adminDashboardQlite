@@ -13,7 +13,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/">
+        <a class="nav-link" href="/profil">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Profil</span></a>
       </li>
@@ -29,7 +29,7 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
       <li class="nav-item">
-        <a class="nav-link" href="/buku">
+        <a class="nav-link" href="/pertanyaan">
           <i class="fas fa-fw fa-book"></i>
           <span>Pertanyaan</span></a>
       </li>
@@ -37,7 +37,7 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
       <li class="nav-item">
-        <a class="nav-link" href="/buku">
+        <a class="nav-link" href="/jawaban">
           <i class="fas fa-fw fa-book"></i>
           <span>Jawaban</span></a>
       </li>
