@@ -23,10 +23,7 @@ Route::get('/login', function(){
     return view('layout.app');
 });
 
-// Route::get('/profil', function(){
-//     return view('halaman.profil');
-// });
-Route::get('/profil', 'ProfilController@index');
+
 
 Route::get('/kategori/create', 'KategoriController@create');
 Route::post('/kategori', 'KategoriController@store');
@@ -51,6 +48,11 @@ Route::get('/jawaban/{id}', 'JawabanController@show');
 Route::get('/pertanyaan/{id}/edit', 'JawabanController@edit');
 Route::put('/jawaban/{id}', 'JawabanController@update');
 Route::delete('/jawaban/{id}', 'JawabanController@destroy');
+
+Route::resource('profil', 'ProfilController')->only([
+    'index','update', 'edit'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
