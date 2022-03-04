@@ -47,3 +47,29 @@ Route::get('/jawaban/{id}', 'JawabanController@show');
 Route::get('/pertanyaan/{id}/edit', 'JawabanController@edit');
 Route::put('/jawaban/{id}', 'JawabanController@update');
 Route::delete('/jawaban/{id}', 'JawabanController@destroy');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//Middleware
+
+Route::get('/', function () {
+    //
+})->middleware('web');
+
+Route::group(['middleware' => ['web']], function () {
+    //
+});
+
+Route::middleware(['web', 'subscribed'])->group(function () {
+    //
+});
+
