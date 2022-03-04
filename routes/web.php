@@ -19,6 +19,10 @@ Route::get('/master', function () {
     return view('halaman.master');
 });
 
+Route::get('/login', function(){
+    return view('layout.app');
+});
+
 // Route::get('/profil', function(){
 //     return view('halaman.profil');
 // });
