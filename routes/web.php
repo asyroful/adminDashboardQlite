@@ -19,10 +19,10 @@ Route::get('/master', function () {
     return view('halaman.master');
 });
 
-Route::get('/profil', function(){
-    return view('halaman.profil');
-});
-
+// Route::get('/profil', function(){
+//     return view('halaman.profil');
+// });
+Route::get('/profil', 'ProfilController@index');
 
 Route::get('/kategori/create', 'KategoriController@create');
 Route::post('/kategori', 'KategoriController@store');
@@ -39,3 +39,11 @@ Route::get('/pertanyaan/{id}', 'PertanyaanController@show');
 Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');
 Route::put('/pertanyaan/{id}', 'PertanyaanController@update');
 Route::delete('/pertanyaan/{id}', 'PertanyaanController@destroy');
+
+Route::get('/jawaban/create', 'JawabanController@create');
+Route::post('/jawaban', 'JawabanController@store');
+Route::get('/jawaban', 'JawabanController@index');
+Route::get('/jawaban/{id}', 'JawabanController@show');
+Route::get('/pertanyaan/{id}/edit', 'JawabanController@edit');
+Route::put('/jawaban/{id}', 'JawabanController@update');
+Route::delete('/jawaban/{id}', 'JawabanController@destroy');
