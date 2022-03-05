@@ -4,24 +4,42 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Pertanyaan;
+use App\Kategori;
+
 
 class PertanyaanController extends Controller
 {
     public function create() {
-        return view('pertanyaan.create');
+        $kategori = Kategori::all();
+        return view('pertanyaan.create', compact('kategori'));
     }
 
     
     public function store(Request $request)
     {
+      
         $request->validate([
-            'pertanyaan' => 'required'
+            'pertanyaan' => 'required',
+            'gambar' => 'required|mimes:png,jpg,jpeg',
+            'kategori_id' => 'required',
         ]);
-        $query = DB::table('pertanyaan')->insert([
-            "pertanyaan" => $request["nama"],
-            "gambar" => $request["gambar"]
-        ]);
-        return redirect('/pertanyaan')->with('success', 'Data Berhasil Dibuat');
+
+        
+        $fileName = time() . '.' . $request->gambar->extension();
+
+        $pertanyaan = new Pertanyaan;
+
+        $pertanyaan->pertanyaan = $request->pertanyaan;
+        $pertanyaan->gambar = $fileName;
+        $pertanyaan->kategori_id = $request->kategori_id;
+        $pertanyaan->users_id = $request->user_id;
+
+        $pertanyaan->save();
+
+        $request->gambar->move(public_path('uploads'), $fileName);
+
+        return redirect('/pertanyaan')->with('success', 'Pertanyaan Disimpan!');
     }
     
     public function index()
