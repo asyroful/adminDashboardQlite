@@ -1,7 +1,7 @@
 @extends('halaman.master')
 @section('content')
 <div class="m-3">
-  <h2>Edit Kategori {{$post->id}}</h2>
+  <h2>Edit Kategori {{$post->nama}}</h2>
   <form action="/kategori/{{$post->id}}" method="POST">
       @csrf
       @method('PUT')
