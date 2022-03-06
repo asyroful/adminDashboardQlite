@@ -15,6 +15,19 @@
         <label>Gambar</label>
         <input type="file" name="gambar" class="form-control" id="gambar" value="{{ old('gambar','')}}">
       </div>
+      <div class="form-group">
+        <label>Pertanyaan</label>
+        <select name="pertanyaan_id" class="form-control" id="">
+          <option value="">--Pilih Pertanyaan--</option>
+          @foreach ($pertanyaan as $item)
+              <option value="{{$item->id}}">{{$item->pertanyaan}}</option>             
+          @endforeach
+        </select>
+        @error('pertanyaan_id')
+          <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+      </div>
       <button type="submit" class="btn btn-primary">Tambah</button>
     </form>
 </div>

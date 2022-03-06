@@ -11,5 +11,8 @@ class TimelineController extends Controller
     {
         $pertanyaan = DB::table('pertanyaan')->get();
         return view('timeline.index', compact('pertanyaan'));
+
+        $jawaban = DB::table('jawaban')->get();
+        return view('timeline.index', compact('jawaban'));
     }
 }
