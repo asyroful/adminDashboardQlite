@@ -20,9 +20,9 @@
                     <div class="card-body">
                     <h3><a href="">{{ $post->pertanyaan }}</a></h3>
                     <p class="small"><b>{{ $post->users->name }} | {{ $post->created_at }}</b></p>
-                    <img src="{{asset('uploads/'.$post->gambar)}}" class="card-img-top">                                                
-                        <a href="/landing/show" class="small">Lihat Jawaban|</a>
-                        <a href="#" class="small">Jawab |</a>
+                    <img src="{{asset('uploads/'.$post->gambar)}}" class="card-img-top" style ="width:auto; height:150px">                                                
+                        <a href="/jawaban" class="small">Lihat Jawaban|</a>
+                        <a href="/jawaban/create" class="small">Jawab |</a>
                     </div>
                 </div>
             </div>

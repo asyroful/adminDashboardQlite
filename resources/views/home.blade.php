@@ -16,7 +16,7 @@
 
                     You are logged in!
                 </div>
-                <meta http-equiv='refresh' content='0; URL=master'>
+                <meta http-equiv='refresh' content='0; URL=timeline'>
             </div>
         </div>
     </div>

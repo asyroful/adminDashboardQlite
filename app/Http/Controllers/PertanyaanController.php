@@ -69,7 +69,7 @@ class PertanyaanController extends Controller
                     ->where('id', $id)
                     ->update([
                         'pertanyaan' => $request['pertanyaan'],
-                        'gambar' => $request['gambar']
+                        'gambar' => $request['gambar'],
                     ]);
         return redirect('/pertanyaan')->with('success', 'Data Berhasil Diupdate');
     }

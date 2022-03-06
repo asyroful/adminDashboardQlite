@@ -59,12 +59,12 @@ class JawabanController extends Controller
     public function update($id, Request $request)
     {
         $request->validate([
-            'nama' => 'required|unique:jawaban'
+            'jawaban' => 'required'
         ]);
         $query = DB::table('jawaban')
                     ->where('id', $id)
                     ->update([
-                        'nama' => $request['nama'],
+                        'jawaban' => $request['jawaban'],
                         'gambar' => $request['gambar']
                     ]);
         return redirect('/jawaban')->with('success', 'Data Berhasil Diupdate');

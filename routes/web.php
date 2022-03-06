@@ -50,7 +50,7 @@ Route::get('/jawaban/create', 'JawabanController@create');
 Route::post('/jawaban', 'JawabanController@store');
 Route::get('/jawaban', 'JawabanController@index');
 Route::get('/jawaban/{id}', 'JawabanController@show');
-Route::get('/pertanyaan/{id}/edit', 'JawabanController@edit');
+Route::get('/jawaban/{id}/edit', 'JawabanController@edit');
 Route::put('/jawaban/{id}', 'JawabanController@update');
 Route::delete('/jawaban/{id}', 'JawabanController@destroy');
 

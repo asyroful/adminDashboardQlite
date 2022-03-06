@@ -33,7 +33,6 @@
               <div class="card">
                   <div class="card-body">
                     
-
             <form action="/profil/{{$profil->id}}" method="POST">
             @csrf
             @method('PUT')

@@ -7,7 +7,7 @@
       @method('PUT')
       <div class="form-group">
         <label for="pertanyaan">Pertanyaan</label>
-        <input type="text" name="pertanyaan" id="pertanyaan" class="form-control" value="{{$post->pertanyaan}}" placeholder="Masukkan Pertanyaan">
+        <input type="text" name="pertanyaan" id="pertanyaan" class="form-control" value="{{$post->pertanyaan}}" placeholder="Masukkan pertanyaan">
         @error('nama')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
