@@ -13,7 +13,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/master">
+        <a class="nav-link" href="/timeline">
           <i class="fas fa-fw fa-newspaper"></i>
           <span>Beranda</span></a>
       </li>

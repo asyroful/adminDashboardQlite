@@ -54,6 +54,9 @@ Route::get('/pertanyaan/{id}/edit', 'JawabanController@edit');
 Route::put('/jawaban/{id}', 'JawabanController@update');
 Route::delete('/jawaban/{id}', 'JawabanController@destroy');
 
+//CRUD TIMELINE
+Route::get('/timeline', 'TimelineController@index');
+
 //CRUD PROFIL
 Route::resource('profil', 'ProfilController')->only([
     'index','update', 'edit'
