@@ -1,55 +1,38 @@
 @extends('halaman.master')
 @section('content')
-    <div class= "m-3">
-        <div class="card">
-            @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success')}}
+    <!--<section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <h2>Search the question</h2>
+        <ul class="nav">
+            <li><input type="text" name="search" class="form-control"></li>
+            <li><button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button></li>
+        </ul>
+      </div>
+    </section>-->
+
+    <section class="inner-page">
+      <div class="container">
+        <div class="row">
+          @forelse($pertanyaan as $key => $post)
+            <div class="col-md-10">
+                <div class="card mb-2">     
+                    <div class="card-body">
+                    <h3><a href="">{{ $post->pertanyaan }}</a></h3>
+                    <p class="small"><b>{{ $post->users->name }} | {{ $post->created_at }}</b></p>
+                    <img src="{{asset('uploads/'.$post->gambar)}}" class="card-img-top">                                                
+                        <a href="/landing/show" class="small">Lihat Jawaban|</a>
+                        <a href="#" class="small">Jawab |</a>
+                    </div>
                 </div>
-            @endif
-            <div class="card-header">
-                <h3 class="card-title">Timeline</h3>
             </div>
-            
-            <div class="card-body">
-                <a class="btn btn-primary mb-2" href="/pertanyaan/create">Create New Question</a>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th style="width: 10px">No</th>
-                            <th>Pertanyaan</th>
-                            <th>Gambar</th>
-                            <th>User</th>
-                            <th>Kategori</th>
-                            <th style="width: 40px">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse($pertanyaan as $key => $post)
-                        <tr>
-                        <td>{{ $key + 1}}</td>
-                        <td>{{ $post->pertanyaan }}</td>
-                        <td>{{ $post->gambar }}</td>
-                        <td>{{ $post->users->name }}</td>
-                        <td>{{ $post->kategori->nama }}</td>
-                        <td style="display: flex;" class="mx-2">
-                            <a href="/pertanyaan/{{$post->id}}" class="btn btn-info btn-sm mx-1">Show</a>
-                            <a href="/pertanyaan/{{$post->id}}/edit" class="btn btn-default btn-sm mx-1">Edit</a>
-                            <form action="/pertanyaan/{{$post->id}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <input type="submit" value="delete" class="btn btn-danger btn-sm mx-1">
-                            </form>
-                        </td>
-                        </tr>
-                        @empty
-                            <tr>
-                                <td colspan="4" align="center">No data</td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
+            @empty
+            <tr>
+                <td colspan="4" align="center">No data</td>
+            </tr>
+          @endforelse
         </div>
-    </div>
+      </div>
+    </section>
+
 @endsection
