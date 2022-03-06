@@ -1,44 +1,55 @@
 @extends('halaman.master')
-
 @section('content')
-
-    <!--<section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <h2>Search the question</h2>
-        <ul class="nav">
-            <li><input type="text" name="search" class="form-control"></li>
-            <li><button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button></li>
-        </ul>
-      </div>
-    </section>-->
-
-    <section class="inner-page">
-      <div class="container">
-        <div class="row">
-            <div class="col-md-10">
-                <div class="card mb-2">     
-                    <div class="card-body">
-                    <h3><a href="">Question#238</a></h3>
-                    <p class="small"><b>user+62</b></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam non qui ullam natus quaerat velit earum, iste nemo hic tempora error laborum aliquam, optio, ratione dolorum minus architecto sunt labore aut exercitationem fugit voluptatibus! Laudantium iste eum, pariatur quidem ad iure velit aliquid inventore. Natus iste sint doloremque expedita possimus...</p>
-                                                
-                        <a href="/landing/show" class="small">see responses(3) |</a>
-                        <a href="#" class="small">reply |</a>
-                    </div>
+    <div class= "m-3">
+        <div class="card">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success')}}
                 </div>
-                <div class="card">     
-                    <div class="card-body">
-                    <h3><a href="">Question#239</a></h3>
-                    <p class="small"><b>user+62</b></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, unde?</p>
-
-                        <a href="/landing/show" class="small">see responses(12) |</a>
-                        <a href="#" class="small">reply |</a>
-                    </div>
-                </div>   
+            @endif
+            <div class="card-header">
+                <h3 class="card-title">Timeline</h3>
+            </div>
+            
+            <div class="card-body">
+                <a class="btn btn-primary mb-2" href="/pertanyaan/create">Create New Question</a>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 10px">No</th>
+                            <th>Pertanyaan</th>
+                            <th>Gambar</th>
+                            <th>User</th>
+                            <th>Kategori</th>
+                            <th style="width: 40px">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($pertanyaan as $key => $post)
+                        <tr>
+                        <td>{{ $key + 1}}</td>
+                        <td>{{ $post->pertanyaan }}</td>
+                        <td>{{ $post->gambar }}</td>
+                        <td>{{ $post->users->name }}</td>
+                        <td>{{ $post->kategori->nama }}</td>
+                        <td style="display: flex;" class="mx-2">
+                            <a href="/pertanyaan/{{$post->id}}" class="btn btn-info btn-sm mx-1">Show</a>
+                            <a href="/pertanyaan/{{$post->id}}/edit" class="btn btn-default btn-sm mx-1">Edit</a>
+                            <form action="/pertanyaan/{{$post->id}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="delete" class="btn btn-danger btn-sm mx-1">
+                            </form>
+                        </td>
+                        </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" align="center">No data</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
             </div>
         </div>
-      </div>
-    </section>
+    </div>
 @endsection

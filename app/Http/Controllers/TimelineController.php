@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App\Pertanyaan;
+use App\Kategori;
+use App\User;
 
 class TimelineController extends Controller
 {
     public function index()
     {
-        $pertanyaan = DB::table('pertanyaan')->get();
+        $pertanyaan = Pertanyaan::all();
         return view('timeline.index', compact('pertanyaan'));
-
-        $jawaban = DB::table('jawaban')->get();
-        return view('timeline.index', compact('jawaban'));
     }
 }
